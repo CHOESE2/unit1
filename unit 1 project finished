@@ -1,0 +1,121 @@
+//cheese
+//rat eats chee
+//feb 6
+//choese
+//stroke, r, g, b
+//stroke weight (how thick the line is in pixles), a number value
+//background, r,g,b
+//fill, r, g, b, 0-255
+//rect,  x, y, w, h
+//ellipse x, y, w, h
+//line, (x1, y1),( x2, y2) basically coordinates. 
+
+size(600, 600); // width, height 
+background(255);
+
+
+fill(255, 206, 100); 
+triangle(80, 295, 320, 180, 525, 230); // (x1, y1), (x2, y2), (x3, y3)
+
+fill(255, 218, 133);
+quad(80, 295, 80, 460, 525, 410, 525, 230);
+
+line(80, 295, 80, 460);
+line(525, 230, 525, 410);
+line(80, 460, 525, 410);
+
+
+// 1 hole 
+line(425, 238, 432, 244);
+line(425, 238, 418, 230);
+line(418, 230, 400, 225);
+line(400, 225, 375, 222);
+line(375, 222, 365, 223);
+line(365, 223, 350, 225);
+line(350, 225, 340, 228);
+line(340, 228, 335, 231);
+line(335, 231, 330, 240);
+line(330, 240, 330, 245);
+line(330, 245, 334, 250);
+line(334, 250, 343, 256);
+// bottom half of the custom cheese hole
+line(344, 256, 349, 273);
+line(349, 273, 352, 278);
+line(352, 278, 360, 285);
+line(360, 285, 365, 288);
+line(365, 288, 380, 289);
+line(380, 289, 388, 289);
+line(388, 289, 395, 288);
+line(395, 288, 408, 285);
+// right side line
+line(432, 244, 430, 265);
+line(430, 265, 425, 275);
+line(425, 275, 419, 280);
+line(419, 280, 408, 285);
+line(408, 285, 406, 286);
+//colouring this in someway
+
+fill(247, 202, 105);
+// CHEESE BITE!
+ellipse( 387, 255, 80, 54);
+// top 
+ellipse(380, 243, 90, 30);
+
+//  cheese holes
+fill(255, 199, 77);
+
+ellipse(150, 363, 80, 85); // big circle
+ellipse(230, 334, 45, 45); // first small circle
+ellipse(300, 325, 40, 40); // second small circle
+ellipse(200, 258, 50, 20); //probably one of the two small circles
+ellipse(440, 330, 60, 70); // right circle
+ellipse(340, 390, 30, 32);
+
+
+// inside circle circles
+
+fill(219, 170, 64);
+ellipse(200, 263, 37, 9);
+
+fill(219, 170, 64);
+ellipse(214, 334, 11, 30); //circle inside the first small circle
+
+fill(219, 170, 64);
+ellipse(119, 361, 15, 45); // inside circle circle
+
+
+//RAT!!
+//head
+fill(131, 131, 131);
+ellipse(256, 95, 26, 25); // left ear
+ellipse(277, 118, 50, 50); //head
+ellipse(300, 96, 26, 25); // right ear
+rect(274, 140, 6, 15); // neck
+triangle(269, 112, 234, 135, 277, 132); //snout
+
+fill(255, 191, 192);
+ellipse(300, 100, 16,16); //ear
+
+fill(0);
+ellipse(290, 120,10,10); // right eye
+ellipse(252 ,119, 10, 10); // left eye
+
+fill(131, 131, 131);
+// shins?
+rect(260, 220, 6, 25);
+rect(288, 220, 6, 25);
+// feet
+rect(250, 240, 15, 8);
+rect(279, 240, 15, 8);
+//thighs
+ellipse(263, 215, 20, 35); //left thigh
+//body
+ellipse(277, 184, 60, 72); // rat
+ellipse(291, 215, 20, 35); //right thigh
+ellipse(295, 180, 15, 40); // right arm
+rect(300, 210, 20, 4); // tail
+rect(320, 215, 20, 4);// tail
+line( 290, 130, 310, 126);
+line(289, 135, 308, 145);
+
+
