@@ -1,0 +1,13 @@
+// animation time
+//cheese??? or..no cheese
+
+void setup(){
+  size(600, 600);
+  }
+  //-- end of setup---//
+
+void draw() {
+  background(250);
+  ellipse(mouseX, mouseY, 200, 200);
+  ellipse(mouseX, mouseY, 300, 300);
+}
