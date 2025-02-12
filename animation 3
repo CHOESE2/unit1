@@ -1,0 +1,14 @@
+// built in variable, 
+int chocolate;
+
+void setup() {
+  size(600,600);
+  chocolate = 100;
+}
+
+void draw(){
+  background(210);
+  strokeWeight(1);
+  ellipse(300, 300, chocolate, chocolate);
+chocolate = chocolate + 5;
+}
