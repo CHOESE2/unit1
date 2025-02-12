@@ -1,3 +1,4 @@
+
 // built in variable, 
 int chocolate;
 
@@ -11,5 +12,7 @@ void draw(){
   strokeWeight(1);
   ellipse(300, chocolate, 200, 200);
 chocolate = chocolate + 5;
+if (chocolate > 700){
+  chocolate = -100;
 }
-  
+}  
