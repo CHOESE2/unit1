@@ -11,5 +11,8 @@ void draw(){
   strokeWeight(1);
   ellipse(chocolate, 300, 200, 200);
 chocolate = chocolate - 5;
+if (chocolate < -100){
+  chocolate = 700;
+}
 }
   
