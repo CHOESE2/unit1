@@ -1,21 +1,26 @@
-// built in variable, 
+// built in variable,
 
 int chocolate;
-int x;
+int v;
 
 
-void setup(){
-  size(600,600);
+void setup() {
+  size(600, 600);
   chocolate = 600;
-  x = 0;
+  v = 0;
 }
 
-void draw(){
+void draw() {
   background(250);
   strokeWeight(1);
   ellipse(200, chocolate, 100, 100);
-  ellipse(500, x, 100, 100);
+  ellipse(500, v, 100, 100);
   chocolate = chocolate - 5;
-  x = x + 5;
+  v = v + 5;
+  if (v > 700) {
+    v = -100;
+  if (chocolate < 0) {
+  chocolate = 700;
+  }
+  }
 }
-  
