@@ -1,16 +1,9 @@
 // unit two animation
 // feb 12
 
-
-////test
-size(600, 600);
-translate(300,300);
-
-
-
 //test
 size(800, 600);
-translate(10, 10);
+translate(400, 300);
 
 background(255);
 //body
@@ -132,4 +125,14 @@ rect(95, -38, 5, 12);
 rect(120, -38, 5, 12);
 rect(145, -38, 5, 12);
 rect(-32, -39, 198, 6);
+
+
+
+
+
+
+
+
+
+
 
