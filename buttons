@@ -1,0 +1,31 @@
+
+color shell = #FE4365;
+color red = #FC9D9A;
+color orange = #F9CDAD;
+color green = #C8C8A9;
+
+
+
+void setup() {
+  size(800, 600);
+  strokeWeight(3);
+  stroke(shell);
+}
+
+
+void draw() {
+  background(255);
+  square(500, 200, 200);
+  
+  //buttons
+fill(red);
+  circle(200, 150, 100);
+  
+fill(orange);
+  circle(200, 300, 100);
+  
+fill(green);
+  circle(200, 450, 100);
+  
+  
+}
