@@ -1,0 +1,48 @@
+
+
+color shell = #FE4365;
+color red = #FC9D9A;
+color orange = #F9CDAD;
+color green = #C8C8A9;
+color Selector = #FE4365;
+
+
+
+void setup(){
+  size(800, 600);
+  strokeWeight(3);
+  stroke(shell);
+
+}
+
+
+void draw() {
+  background(255);
+  
+  fill(Selector);
+  square(220, 150, 230);
+  
+  //buttons
+fill(red);
+  circle(320, 450, 100);
+  
+fill(orange);
+  circle(525, 450, 100);
+  
+fill(green);
+  circle(530, 280, 100);
+ 
+}
+
+void mouseReleased(){
+  if (dist(320, 450, mouseX, mouseY) < 50){
+    Selector = red;
+  }
+  if (dist(525, 450, mouseX, mouseY) < 50){
+    Selector = orange;
+  }
+  if (dist(530, 280, mouseX, mouseY) < 50){
+    Selector = green;
+  }
+}
+  
