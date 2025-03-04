@@ -1,0 +1,43 @@
+color white = #F9F1E7;
+color r1 = #B23351;
+color r2 = #981A37;
+color r3 = #630F23;
+color r4 = #4E0B1A;
+float sliderY;
+float Stroke;
+
+
+void setup(){
+
+
+  size(800, 600);
+  strokeWeight(5);
+  stroke(white);
+  fill(r2);
+  sliderY = 400; // starting point of X
+}
+
+
+void draw(){
+  background(Stroke);
+  line(400, 150, 400, 450);
+  circle(400, sliderY, 50);
+}
+
+void mouseDragged(){
+  controlSlider();
+} 
+
+  void mouseReleased(){
+    controlSlider();
+  }
+  
+  
+void controlSlider(){
+  
+  if(mouseY > 150 && mouseY < 450 && mouseX > 375 && mouseX < 425){
+    sliderY = mouseY;
+  }
+  
+  Stroke = map(sliderY, 150, 450, 0, 255);
+}
