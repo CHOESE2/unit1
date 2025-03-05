@@ -1,0 +1,45 @@
+color white = #F9F1E7;
+color r1 = #B23351;
+color r2 = #981A37;
+color r3 = #630F23;
+color r4 = #4E0B1A;
+float Selector;
+int toggle;
+
+
+void setup(){
+  size(800, 600);
+  strokeWeight(3);
+  Selector = white;
+  toggle = 1;
+
+}
+
+void draw(){
+  stroke(r4);
+  background(0);
+  fill(Selector);
+  circle(400, 200, 250);
+ 
+ fill(r1);
+  rect(100, 430, 150, 100);
+ fill(r2);
+  rect( 330, 430, 150, 100);
+ fill(r3);
+  rect(550, 430, 150, 100);
+  if (toggle > 0){
+    fill(r2);
+}
+}
+
+void tactile (int x, int y, int w, int h){
+  if dist(x + w, y, mouseX, mouseY) 
+  
+  
+  
+void mouseReleased(){
+  if(mouseX > 100 && mouseX < 250 && mouseY > 430 && mouseY < 530){
+    toggle = toggle * 1;
+
+  } 
+}
