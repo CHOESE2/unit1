@@ -6,6 +6,7 @@ color r4 = #4E0B1A;
 float Selector;
 color SelectedColor = #FFFFFF;
 int toggle;
+int guidlines;
 
 
 
@@ -15,6 +16,7 @@ void setup() {
   strokeWeight(3);
   Selector = white;
   toggle = 1;
+  guidlines = 1;
   
 
 }
@@ -40,7 +42,12 @@ void draw() {
   if (toggle > 0) {
     fill(255);
  square(320, 100, 50);
+ 
+ if(guidlines > 0){
+   stroke(white);
+   line(mouseX, 0, mouseY, height);
   }
+}
 }
 
 void tactile (int x, int y, int w, int h) {
@@ -55,6 +62,7 @@ void mouseReleased() {
   if (mouseX > 100 && mouseX < 250 && mouseY > 430 && mouseY < 530) {
     SelectedColor = r1;
     toggle = toggle * -1;
+    guidlines = guidlines * -1;
    
     
     
