@@ -1,0 +1,151 @@
+// red
+color white = #F9F1E7;
+color r1 = #B23351;
+color r2 = #981A37;
+color r3 = #630F23;
+color r4 = #4E0B1A;
+color SelectedColor;
+// end red
+//purple
+color whitep = #F2F4F2;
+color p1 = #DDE2FC;
+color p2 = #B9B5FC;
+color p3 = #0E0E2F;
+// end purple
+PImage bunny;
+boolean bunnyOn;
+boolean heroOn; //true or false
+PImage hero;
+boolean omoriOn;  //true or false
+PImage omori;
+
+float sliderY;
+
+
+void setup() {
+  size(950, 800);
+  strokeWeight(3);
+  SelectedColor = #FFFFFF;
+  background(255);
+  bunny = loadImage("bunny.png");
+  bunnyOn = false;
+  hero = loadImage("hero.png");
+  heroOn = false;
+  omori = loadImage("omori.png");
+  omoriOn = false;
+  sliderY = 475;
+  
+}
+
+void draw() {
+  // toolbar
+  stroke(26, 26, 26);
+  fill(26, 26, 26);
+  rect(0, 0, 950, 200);
+  stroke(r4); // outline
+  // red
+  tactile(300, 38, 65, 60);
+  fill(r1);
+  rect(300, 38, 65, 60);
+
+  tactile(300, 110, 65, 60);
+  fill(r2);
+  rect(300, 110, 65, 60);
+
+  tactile(375, 38, 65, 60);
+  fill(r3);
+  rect(375, 38, 65, 60);
+
+  tactile(375, 110, 65, 60);
+  fill(white);
+  rect(375, 110, 65, 60);
+  // end of red
+
+  //purple
+
+
+
+  //line for slider
+  //circle for sliderY
+
+
+
+  // stickers
+  tactile(60, 35, 60, 60);
+  omoriOnoff();
+  fill(255);
+  rect(60, 35, 60, 60); // omori
+  image(omori, 60, 34, 62, 62);
+
+  tactile(60, 110, 60, 60);
+  fill(255);
+  rect(60, 110, 60, 60);
+  image(hero, 60, 110, 60, 60);
+
+  tactile(128, 35, 60, 60);
+  fill(255);
+  rect(128, 35, 60, 60);
+  image(bunny, 128, 35, 60, 60);
+
+
+///
+
+  fill(255);
+  rect(128, 110, 60, 60);
+  //image
+}
+
+void tactile (int x, int y, int w, int h) {
+  if (mouseX > x && mouseX < x+w && mouseY > y && mouseY < y+h) {
+    stroke(#FFFFFF);
+  } else stroke(r4);
+}
+
+
+
+void mouseReleased() {
+
+
+  // red
+  if (mouseX > 300 && mouseX < 365 && mouseY > 38 && mouseY < 98) {
+    SelectedColor = r1;
+  }
+  if (mouseX > 300 && mouseX < 365 && mouseY > 110 && mouseY < 170) {
+    SelectedColor = r2;
+  }
+  if (mouseX > 375 && mouseX < 440 && mouseY > 38 && mouseY < 98) {
+    SelectedColor = r3;
+  }
+  if (mouseX > 375 && mouseX < 440 && mouseY > 110 && mouseY < 170) {
+    SelectedColor = white;
+  }  // red end
+
+  //omori button
+  if (mouseX > 60 && mouseX < 120 && mouseY > 35 && mouseY < 95) {
+    omoriOn = !omoriOn;
+  }
+}
+
+
+void mouseDragged() {
+  if (omoriOn == false) {
+    //sqiggly line
+    strokeWeight(3);
+    stroke(SelectedColor);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  } else {
+    image(omori, mouseX-31, mouseY-31, 62, 62);
+  }
+}
+
+void omoriOnoff() {
+  if (omoriOn == true) {
+    stroke(255, 0, 0);
+    strokeWeight(3);
+  } else {
+    stroke(0);
+    strokeWeight(2);
+  }
+  //load button
+  //save button
+}
