@@ -1,0 +1,17 @@
+// unit 4 comples shape but simplified
+// April first
+
+
+
+
+void setup(){
+  background(212, 211, 255);
+  strokeWeight(3);
+  size(800, 800);
+
+}
+
+void draw(){
+  stroke(255, 8, 198);
+  circle(400, 400, 300);
+}
