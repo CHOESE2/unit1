@@ -1,0 +1,91 @@
+void setup(){
+  strokeWeight(3);
+  size(800, 800);
+}
+
+
+void draw(){
+background(255);
+grapeSoda(280, 280); //x, y
+}
+
+void grapeSoda(int x, int y){
+  pushMatrix();
+  translate(x, y);
+  box();
+  juice();
+  wrapper();
+  texts();
+  grape();
+ 
+  popMatrix();
+}
+
+void box(){
+ //bottle cap
+  stroke(32, 0, 49);
+  fill(255);
+  rect(18, -11, 38, 16);
+  
+  //first layer box
+  stroke(32,0, 49);
+  fill(255);
+ rect(0, 0, 130, 200);
+}
+
+void juice(){
+//second layer
+ fill(32,0, 49);
+ rect(7, 15, 115, 172);
+ }
+ 
+void wrapper(){
+ //third layer wrapper
+ fill(255);
+ rect(0, 30, 130, 80);
+}
+
+void texts(){
+  //grape
+fill(0);
+textSize(20);
+strokeWeight(3);
+text("grape", 18, 58);
+
+//soda
+fill(0);
+textSize(30);
+strokeWeight(3);
+text("juice", 46, 90);
+}
+
+void grape(){
+   //1
+ stroke(216, 203, 255);
+  fill(164, 105, 193);
+ circle(65, 174, 20);
+  // third row
+ circle(69, 159, 20);
+  circle(83, 170, 20);// 2
+
+ // 2nd row
+ circle(70, 148, 20);//1
+  circle(95, 162, 22);//3
+ circle(84, 150, 22);//2
+
+ 
+ //top
+ 
+ circle(72, 134, 22);// l
+ circle(85, 137, 24); // 2 
+ circle(97, 145, 25); // 1
+ circle(108, 155, 22);// r
+ 
+ //vine
+ stroke(212, 236, 252);
+ fill(16, 62, 4);
+ rect(99, 119, 5, 13);
+rect(93, 115, 23, 5);
+ //grape soda 280, 280);
+ 
+}
