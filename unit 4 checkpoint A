@@ -13,14 +13,39 @@ void setup(){
 
 void draw(){
   background(255);
+  
+  //bottle cap
+  stroke(32, 0, 49);
+  fill(255);
+  rect(298, 269, 38, 16);
+  //first layer
   stroke(32,0, 49);
   fill(255);
  rect(280, 280, 130, 200);
-
  
  //second layer
  fill(32,0, 49);
  rect(287, 295, 115, 172);
+ 
+ //third layer
+ fill(255);
+ rect(280, 310, 130, 80);
+ 
+ //grape
+fill(0);
+textSize(20);
+strokeWeight(3);
+text("grape", 298, 338);
+
+//soda
+fill(0);
+textSize(30);
+strokeWeight(3);
+text("juice", 326, 370);
+
+
+
+
 
  //1
  stroke(216, 203, 255);
@@ -51,3 +76,6 @@ rect(373, 395, 23, 5);
  
  
 }
+
+//void grapesoda(int x, int y, int w, int h){
+  
