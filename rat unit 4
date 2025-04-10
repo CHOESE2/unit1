@@ -1,0 +1,146 @@
+// remy
+
+void setup(){
+size(800, 800);
+
+}
+
+void draw(){
+  background(255);
+  remy(800, 800);
+}
+
+
+void remy(int x, int y){
+  pushMatrix();
+  translate( x, y);
+  //head(); 
+  //leftER();
+  //rightEP();
+  //neck();
+  //snout();
+  //rightE();
+  //leftE();
+  //shins();
+  //feet();
+  //thighL();
+  //thighR();
+  //body();
+  //arm();
+  //tail1();
+  //tail2();
+  //whisker1();
+  //whisker2();
+  popMatrix();
+}
+  
+ 
+  
+
+ void head(){
+   fill(131, 131, 131);
+   ellipse(277, 118, 50, 50);
+ }
+ void leftER(){
+   fill(131, 131, 131);
+   ellipse(256, 95, 26, 25);
+ }
+ void rightEP(){
+   fill(131, 131, 131);
+   ellipse(300, 96, 26, 25);
+    fill(255, 191, 192);
+   ellipse(300, 100, 16,16);
+ }
+ void neck(){
+   fill(131, 131, 131);
+   rect(274, 140, 6, 15);
+ }
+ void snout(){
+   fill(131, 131, 131);
+   triangle(269, 112, 234, 135, 277, 132);
+ }
+ void rightE(){
+   fill(0);
+   ellipse(290, 120,10,10);
+ }
+ void leftE(){
+   fill(0);
+   ellipse(252 ,119, 10, 10);
+ }
+ void shins(){
+   fill(131, 131, 131);
+   rect(260, 220, 6, 25);
+rect(288, 220, 6, 25);
+ }
+ void feet(){
+   fill(131, 131, 131);
+   rect(250, 240, 15, 8);
+   rect(279, 240, 15, 8);
+ }
+ void thighL(){
+   fill(131, 131, 131);
+   ellipse(263, 215, 20, 35);
+ }
+ void thighR(){
+   fill(131, 131, 131);
+   ellipse(291, 215, 20, 35);
+ }
+ void body(){
+   fill(131, 131, 131);
+   ellipse(277, 184, 60, 72);
+ }
+ void arm(){
+   fill(131, 131, 131);
+   ellipse(295, 180, 15, 40);
+ }
+  void tail1(){
+    fill(131, 131, 131);
+    rect(300, 210, 20, 4);
+  }
+  void tail2(){
+    fill(131, 131, 131);
+    rect(320, 215, 20, 4);
+  }
+  void whisker1(){
+    fill(131, 131, 131);
+    line( 290, 130, 310, 126);
+  }
+  void whisker2(){
+    fill(131, 131, 131);
+    line(289, 135, 308, 145);
+    
+  }
+  
+//    //RAT!!
+////head
+//fill(131, 131, 131);
+//ellipse(256, 95, 26, 25); // left ear
+//ellipse(277, 118, 50, 50); //head
+//ellipse(300, 96, 26, 25); // right ear
+//rect(274, 140, 6, 15); // neck
+//triangle(269, 112, 234, 135, 277, 132); //snout
+
+//fill(255, 191, 192);
+//ellipse(300, 100, 16,16); //ear
+
+//fill(0);
+//ellipse(290, 120,10,10); // right eye
+//ellipse(252 ,119, 10, 10); // left eye
+
+//fill(131, 131, 131);
+//// shins?
+//rect(260, 220, 6, 25);
+//rect(288, 220, 6, 25);
+//// feet
+//rect(250, 240, 15, 8);
+//rect(279, 240, 15, 8);
+////thighs
+//ellipse(263, 215, 20, 35); //left thigh
+////body
+//ellipse(277, 184, 60, 72); // rat
+//ellipse(291, 215, 20, 35); //right thigh
+//ellipse(295, 180, 15, 40); // right arm
+//rect(300, 210, 20, 4); // tail 1
+//rect(320, 215, 20, 4);// tail 2
+//line( 290, 130, 310, 126);
+//line(289, 135, 308, 145);
