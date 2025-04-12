@@ -1,22 +1,24 @@
 // remy
 
-void setup(){
-size(800, 800);
-background(255);
-
+void setup() {
+  size(800, 800);
+  background(255);
+  int x, y;
+  x = 0;
+  y = 0;
 }
 
-void draw(){
-  remy(400, 400);
+void draw() {
+  remy(200, 200);
 }
 
 
-void remy(int x, int y){
+void remy(int x, int y) {
   pushMatrix();
-  translate( x, y);
- 
+  translate(x, y);
+
   leftER();
-   head(); 
+  head();
   rightEP();
   neck();
   fangs();
@@ -27,103 +29,148 @@ void remy(int x, int y){
   feet();
   thighL();
   thighR();
+  armL();
   body();
-  arm();
+  armR();
   tail1();
   tail2();
   whisker1();
   whisker2();
-  
-  
+  mushroom(70, -118);
+  dots(0, -20);
+
+
   popMatrix();
 }
-  
- 
-  
 
- void leftER(){
-   fill(131, 131, 131);
-   ellipse(256, 95, 26, 25);
- }
-  void head(){
-   fill(131, 131, 131);
-   ellipse(277, 118, 50, 50);
- }
- void rightEP(){
-   fill(131, 131, 131);
-   ellipse(300, 96, 26, 25);
-    fill(255, 191, 192);
-   ellipse(300, 100, 16,16);
- }
- void neck(){
-   fill(131, 131, 131);
-   rect(274, 140, 6, 15);
- }
- void snout(){
-   fill(131, 131, 131);
-   triangle(269, 112, 234, 135, 277, 132);
- }
- void fangs(){
-   fill(255);
-triangle(245, 130, 255, 130, 250, 150);
-triangle(260, 130, 270, 130, 265, 150);
- }
- 
- 
- 
- 
- void rightE(){
-   fill(0);
-   ellipse(290, 120,10,10);
- }
- void leftE(){
-   fill(0);
-   ellipse(252 ,119, 10, 10);
- }
- void shins(){
-   fill(131, 131, 131);
-   rect(260, 220, 6, 25);
-rect(288, 220, 6, 25);
- }
- void feet(){
-   fill(131, 131, 131);
-   rect(250, 240, 15, 8);
-   rect(279, 240, 15, 8);
- }
- void thighL(){
-   fill(131, 131, 131);
-   ellipse(263, 215, 20, 35);
- }
- void thighR(){
-   fill(131, 131, 131);
-   ellipse(291, 215, 20, 35);
- }
- void body(){
-   fill(131, 131, 131);
-   ellipse(277, 184, 60, 72);
- }
- void arm(){
-   fill(131, 131, 131);
-   ellipse(295, 180, 15, 40);
- }
-  void tail1(){
-    fill(131, 131, 131);
-    rect(300, 210, 20, 4);
-  }
-  void tail2(){
-    fill(131, 131, 131);
-    rect(320, 215, 20, 4);
-  }
-  void whisker1(){
-    fill(131, 131, 131);
-    line( 290, 130, 310, 126);
-  }
-  void whisker2(){
-    fill(131, 131, 131);
-    line(289, 135, 308, 145);
-    
-  }
-  
+
+
+
+void leftER() {
+  fill(131, 131, 131);
+  ellipse(256, 95, 26, 25);
+}
+void head() {
+  fill(131, 131, 131);
+  ellipse(277, 118, 50, 50);
+}
+void rightEP() {
+  fill(131, 131, 131);
+  ellipse(300, 96, 26, 25);
+  fill(255, 191, 192);
+  ellipse(300, 100, 16, 16);
+}
+void neck() {
+  fill(131, 131, 131);
+  rect(274, 140, 6, 15);
+}
+void snout() {
+  fill(131, 131, 131);
+  triangle(269, 112, 234, 135, 277, 132);
+}
+void fangs() {
+  fill(255);
+  triangle(245, 130, 255, 130, 250, 150);
+  triangle(260, 130, 270, 130, 265, 150);
+}
+
+
+
+
+void rightE() {
+  //right eye
+  fill(255);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(290, 120, 10, 10); // right eye
+  fill(255, 0, 0);
+  ellipse(290, 120, 5, 5);
+}
+void leftE() {
+  fill(255);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(252, 119, 15, 15); // left eye
+  fill(255, 0, 0);
+  ellipse(252, 119, 6, 6);
+}
+void shins() {
+  fill(131, 131, 131);
+  rect(260, 220, 6, 25);
+  rect(288, 220, 6, 25);
+}
+void feet() {
+  fill(124, 0, 0);
+  rect(250, 240, 15, 8);
+  fill(131, 131, 131);
+  rect(279, 240, 15, 8);
+}
+void thighL() {
+  fill(131, 131, 131);
+  ellipse(263, 215, 20, 35);
+}
+void thighR() {
+  fill(124, 0, 0);
+  ;
+  ellipse(291, 215, 20, 35);
+}
+void body() {
+  fill(131, 131, 131);
+  ellipse(277, 184, 60, 72);
+}
+void armL() {
+  fill(124, 0, 0);
+  rect(230, 178, 29, 8); //left arm
+  rect(230, 178, 7, 17); //fingers
+}
+void armR() {
+  rect(270, 178, 6, 17); //fingers
+  fill(124, 0, 0);
+  ellipse(295, 170, 15, 33); // right shoulder
+  rect(272, 178, 29, 8); //right arm
+  fill(0, 255, 0);
+  rect(278, 178, 10, 7); //lines on arm
+}
+
+void tail1() {
+  fill(131, 131, 131);
+  rect(300, 210, 20, 4);
+}
+void tail2() {
+  fill(131, 131, 131);
+  rect(320, 215, 20, 4);
+}
+void whisker1() {
+  fill(131, 131, 131);
+  line( 290, 130, 310, 126);
+}
+void whisker2() {
+  fill(131, 131, 131);
+  line(289, 135, 308, 145);
+}
+
+void mushroom(int x, int y) {
+  pushMatrix();
+  translate (x, y);
+
+  fill(0);
+  rect(200, 200, 5, 15); //mushroom
+  fill(255);
+  rect(196, 200, 13, 8);//CAP
+  fill(255, 0, 0);
+  circle(206, 200, 5);
+  circle(199, 206, 5);
+  popMatrix();
+}
+void dots(int x, int y) {
+  pushMatrix();
+  translate(x, y);
+  fill(124, 0, 0);
+  circle(270, 184, 8); //dots??
+  popMatrix();
+}
+
+
 //    //RAT!!
 ////head
 //fill(131, 131, 131);
