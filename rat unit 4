@@ -3,13 +3,15 @@
 void setup() {
   size(800, 800);
   background(255);
-  int x, y;
-  x = 0;
-  y = 0;
+  
 }
 
 void draw() {
   remy(200, 200);
+  mushroom(298, 145);
+ // dots(random(200, 270), random(160, 184),random(2, 8)); wanna print it multiple times? 
+  
+  
 }
 
 
@@ -37,7 +39,7 @@ void remy(int x, int y) {
   whisker1();
   whisker2();
   mushroom(70, -118);
-  dots(0, -20);
+  dots(0, -20, 8);
 
 
   popMatrix();
@@ -115,8 +117,15 @@ void thighR() {
   ellipse(291, 215, 20, 35);
 }
 void body() {
-  fill(131, 131, 131);
-  ellipse(277, 184, 60, 72);
+ int q, w;
+  q = 60;
+  w = 72;
+  while(w + q >= 0){
+    q = q - 10;
+    w = w -10;
+  fill(255, random(0, 255), random(0, 255));
+  ellipse(277, 184, q, w );
+  }
 }
 void armL() {
   fill(124, 0, 0);
@@ -162,14 +171,18 @@ void mushroom(int x, int y) {
   circle(199, 206, 5);
   popMatrix();
 }
-void dots(int x, int y) {
+void dots(float x, float y, float d) {
   pushMatrix();
-  translate(x, y);
-  fill(124, 0, 0);
-  circle(270, 184, 8); //dots??
+  translate(x, y, d);
+    fill(255, 0, 0);
+     circle(random(150, 400), random(20,300 ),random(2, 8)); //dots??
   popMatrix();
 }
 
+
+
+//why is there a limit to popMatrix;
+//how do i include a loop in everything without it animating and just printing once, 
 
 //    //RAT!!
 ////head
