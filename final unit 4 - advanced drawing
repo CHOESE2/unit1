@@ -40,11 +40,31 @@ void setup() {
      grapeSoda(w , 700, 0.4);
    
      
-     remy(random(-20, 800), random(450, 800), random(0, 0.5));
-   remy(random(-20, 800), random(450, 800), random(0, 0.8));
-    remy(random(-20, 800), random(450, 800), random(0, 0.5));
+      remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+       remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+        remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+       remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+     
+       
+         remy(random(200, 400), random(465, 700), random(0, 0.5)); // middle
+        
+      
+        remy(random(50, 200), random(500, 700), random(0, 0.5)); //side
+     remy(random(400, 550), random(500, 700), random(0, 0.5)); // side
+     
+     
+
+           
+       
+   //remy(random(0, 750), random(450, 800), random(0, 0.8));
+   // remy(random(-60, 800), random(450, 800), random(0, 0.5));
+   //  remy(random(-60, 800), random(450, 800), random(0, 0.5));
+    
+    
    }
     pizza(450, 450, 0.5);
+    
+    
 
    }
    }
@@ -54,8 +74,10 @@ void setup() {
 
 
 
-void draw() {
+void draw() {  
   
+ 
+   
 }
 
 
