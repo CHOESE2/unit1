@@ -7,13 +7,15 @@ void setup() {
    
   size(800, 800);
   background(0);
+ 
+  fill(100, 170, 206, 200);
+  circle(400, 1000, 1050);
   
-   strokeWeight(2);
-  stroke(255);
-  fill(227, 239, 255);
-  circle(400, 1000, 1070);
+  
+  strokeWeight(2);
   stroke(0);
-  fill(170, 206, 255);
+  fill(255);
+ // fill(170, 206, 255);
   circle(400, 1000, 1000); 
   // plant rat
    
@@ -353,7 +355,10 @@ void bread(int x, int y) {
   translate(x, y);
    fill(random(0, 255), random(0, 255), random(0, 255));
   triangle(196, 100, 256, 100, 226, 200);
-  fill(255);
+  
+  
+  
+  fill(   255, 206, 80 );
   triangle(200, 100, 260, 100, 230, 200);
    fill(random(0, 255), random(0, 255), random(0, 255));
   rect(184, 86, 80, 12);
@@ -376,7 +381,7 @@ void toppings(){
 int d;
 d = 18;
 while(d > 0){
-  d = d - 4;
+  d = d - 5;
   //stroke(random(0, 255), random(0, 255), random(0, 255));
  
   fill(random(0, 255), random(0, 255), random(0, 255));
@@ -397,6 +402,7 @@ void seasoning(){
   rect(238, 135, 3, 10);
   rect(230, 170, 3, 10);
 }
+
 
   
 
