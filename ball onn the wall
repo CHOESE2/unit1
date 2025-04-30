@@ -1,0 +1,74 @@
+//purple color variables------------------------------
+
+color whitep = #F2F4F2;
+color p1 = #DDE2FC;
+color p2 = #B9B5FC;
+color p3 = #0E0E2F;
+
+// ball variables
+float ballx, bally, balld; //ball's position and diameter
+float vx, vy;     //ball's velocity
+float ax, ay; // acceleration// bal's gravity
+
+
+void setup(){
+  background(255);
+  size(600, 600); //P2D
+  ballx = width/2; //size of the screen x = weidth
+  bally = height/2; //size of the screen y = height
+  balld = 50;
+  
+  
+  //balls velocity
+  vx = 2;
+  vy = 5;
+  
+  //balls acceleration
+  ax = 0;
+  ay = 1;
+  
+  
+
+}
+
+void draw(){
+  strokeWeight(2);
+  stroke(0);
+  fill(255);
+  circle(ballx, bally, balld);
+  
+  //velocity + acceleration = gravity
+  vx += ax;
+  vy += ay;
+ 
+  
+  //movement
+  ballx += vx;
+  bally += vy;
+  
+  //bouncing off the walls
+  if (bally <= balld/2) { // top
+    vy = vy * -0.95;
+    bally = balld/2;
+  }
+  
+  if (bally >= height - balld/2){ //bottom
+    vy = vy * -0.95; //reverse the vy. 
+    bally = height - balld/2 ;
+    
+  }
+  if (ballx <= balld/2){// right 
+    vx = vx * -0.95;
+    ballx = balld/2;
+  }
+  
+  if (ballx >= width - balld/2 ){ //left
+    vx = vx * -0.95; //reverse the vx
+    ballx = width - balld/2;
+  }
+
+
+  
+  
+  
+}
