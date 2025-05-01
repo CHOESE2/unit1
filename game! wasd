@@ -1,3 +1,4 @@
+
 //purple color variables------------------------------
 color whitep = #F2F4F2;
 color p1 = #DDE2FC;
@@ -6,81 +7,198 @@ color p3 = #0E0E2F;
 
 //target----------------------------------------------
 float player1x, player1y, //position
-       player1d; ///diameter
+  player1d; ///diameter
 
 float player2x, player2y, //position
-                player2d; //diameter
-       
- //key Variables-------------------
-    boolean aKey, dKey, wKey, sKey, upKey, downKey, leftKey, rightKey; //false by default
-    
-    
-    
+  player2d; //diameter
 
-void setup(){
+//key Variables-------------------
+boolean aKey, dKey, wKey, sKey, upKey, downKey, leftKey, rightKey; //false by default
+
+// ball variables
+float ballx, bally, balld; //ball's position and diameter
+float vx, vy;     //ball's velocity
+float ax, ay; // acceleration// bal's gravity
+
+//hole variables
+float holex, holey, holed;
+
+//score variables
+int point;
+int point2;
+
+
+
+void setup() {
+  point = 0;
+
   size(600, 600);
+
+  ballx = width/2; //size of the screen x = weidth
+  bally = height/2; //size of the screen y = height
+  balld = 50;
+
+
   //player 1
-  player1x = width/2;
+  player1x = width/2; // give you the middle of the screen since width is 600/2 = 300
   player1y = height/2;
   player1d = 100;
-  
+
+
+
+
+
   //player 2
-   player2x = width/2;
+  player2x = width/2;
   player2y = height/2;
   player2d = 100;
-  
+
+
+
+  //balls velocity [ the speed at which the ball is moving is a certain direction ]
+  vx = 6;
+  vy = 10;
+
+  //balls acceleration [ the change in the velocity of the ball ]
+  ax = 0;
+  ay = 5;
+
+
+  //hole setup
+  holex = width/2;
+  holey = height;
+  holed = 200;
 }
 
-void draw(){
+void draw() {
   background(whitep);
   strokeWeight(3);
   stroke(p3);
+
   fill(p2);
   circle(player1x, player1y, player1d);
-  
-  fill(p1);
+  textSize(40);
+  textAlign(CENTER, CENTER); //move to setup
+  fill(0, 0, 255);
+  text(point, player1x, player1y);
+
+
+
+
+  fill(255);
   circle(player2x, player2y, player2d);
-  
-  
-   if (leftKey) player2x -= 5;
+
+
+
+  //KEY CODE
+  if (leftKey) player2x -= 5;
   if (rightKey) player2x += 5;
   if (upKey) player2y -= 5;
   if (downKey) player2y += 5;
 
- 
-  
+  // KEY
   if (aKey) player1x = player1x - 5;
   if (dKey) player1x = player1x + 5;
   if (wKey) player1y = player1y - 5;
   if (sKey) player1y = player1y + 5;
+
+  strokeWeight(5);
+  stroke(0);
+  fill(255);
+  circle(ballx, bally, balld);
+
+
+  ////velocity + acceleration = gravity
+  //vx += ax;
+  //vy += ay;
+
+
+  //movement
+  ballx += vx;
+  bally += vy;
+
+
+  //if (ballx <= balld/2 || ballx >= width - balld/2) vx = -vx;
+  //if (bally <= balld/2 || bally >= height - balld/2) vx = -vx;
+
+  //bouncing off the walls
+  if (bally <= balld/2) { // top
+    vy = vy * -0.95; //positive * negative = negative
+    bally = balld/2; // when the ball is outside the walls this ensures bally is set back to within the walls,
+
+    // if bally was <= to balld/2 wouldn't the computer bounce the ball as soon as it is equal to?
+    // unless the number when bally touches the wall isn't an int and has to go to the nearest int for it to perform a task cuz int can't = float
+  }
+
+  if (bally >= height - balld/2) { //bottom
+    vy = vy * -0.95; //reverse the vy. Negative * negative = positive
+    bally = height - balld/2 ;
+  }
+  if (ballx <= balld/2) {// right
+    vx = vx * -0.95;
+    ballx = balld/2;
+  }
+
+  if (ballx >= width - balld/2 ) { //left
+    vx = vx * -0.95; //reverse the vx
+    ballx = width - balld/2;
+  }
+
+  if (dist(player1x, player1y, ballx, bally) <= player1d/2 + balld/2) {
+    //basically finding the slope
+    vx = (ballx - player1x)/5;
+    vy = (bally - player1y)/5;
+  } if (dist(holex, holey, ballx, bally) <= holed/2 + balld /2){
+    point = point + 1;
+    ballx = width/2;
+    bally = height/2; 
+  }
+
+  if (dist(player2x, player2y, ballx, bally) <= player2d/2 + balld/2) {
+    vx = (ballx - player2x)/5;
+    vy = (bally - player2y)/5;
+  }
+
+
+  //hole
+  strokeWeight(4);
+  stroke(0);
+  fill(0);
+  circle(holex, holey, holed);
+
+
+  //if (dist(holex, holey, ballx, bally) <= holed/2 + balld/2 ) {
+  //  point = point + 1;
+  //  ballx = width/2;
+  //  bally = height/2; //balld/2
+  //}
 }
 
 
-void keyPressed(){
+
+
+void keyPressed() {
   if (key == 'a') aKey = true;
   if (key == 'd') dKey = true;
   if (key == 'w') wKey = true;
   if (key == 's') sKey = true;
-  
-   if (keyCode == LEFT) leftKey = true;
+
+  if (keyCode == LEFT) leftKey = true;
   if (keyCode == RIGHT) rightKey = true;
   if (keyCode == UP) upKey = true;
   if (keyCode == DOWN) downKey = true;
-  
-
-  
 }
 
-void keyReleased(){
+
+void keyReleased() {
   if (key == 'a') aKey = false;
   if (key == 'd') dKey = false;
   if (key == 'w') wKey = false;
   if (key == 's') sKey = false;
-  
-  
-   if (keyCode == LEFT) leftKey =false;
+
+
+  if (keyCode == LEFT) leftKey =false;
   if (keyCode == RIGHT) rightKey = false;
   if (keyCode == UP) upKey = false;
   if (keyCode == DOWN) downKey = false;
- 
 }
