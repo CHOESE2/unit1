@@ -1,0 +1,152 @@
+
+void game() {
+
+
+  background(255);
+
+  image(apple, applex, appley, applew, appleh);
+
+
+  strokeWeight(3);
+  stroke(p3);
+
+
+  fill(0, 43, 98);
+  circle(player1x, player1y, player1d);
+  textSize(40);
+  textAlign(CENTER, CENTER); //move to setup
+  fill(0);
+  text(point, player1x, player1y);
+
+  fill(255);
+  circle(player2x, player2y, player2d);
+  textSize(40);
+  textAlign(CENTER, CENTER); //move to setup
+  fill(0);
+  text(point2, player2x, player2y);
+
+
+
+//sunny collision 
+  if (!sunnyOn && random(1000) < 1) {
+    sunnyx = random(25, 575);
+    sunnyy = random(25, 575);
+    sunnyOn = true;
+  }
+
+  if (sunnyOn){
+    image(sunny, sunnyx, sunnyy, sunnyw, sunnyh);
+  }
+  
+  
+  
+  if (dist(player1x, player1y, sunnyx, sunnyy) <= player1d/2 + 25) {
+    sunnyOn = false;
+    point = point + 4;
+  }
+  
+    if (dist(player2x, player2y, sunnyx, sunnyy) <= player2d/2 + 25) {
+    sunnyOn = false;
+    point2 = point2 + 4;
+  }
+  
+  
+  //KEY CODE
+  if (leftKey) player2x -= 5;
+  if (rightKey) player2x += 5;
+  if (upKey) player2y -= 5;
+  if (downKey) player2y += 5;
+
+  // KEY
+  if (aKey) player1x = player1x - 5;
+  if (dKey) player1x = player1x + 5;
+  if (wKey) player1y = player1y - 5;
+  if (sKey) player1y = player1y + 5;
+
+  strokeWeight(5);
+  stroke(0);
+  fill(255);
+  image(mewo, mewox, mewoy, mewow, mewoh);
+ 
+  
+  ////velocity + acceleration = gravity
+  //vx += ax;
+  //vy += ay;
+
+
+  //movement
+  mewox += vx;
+  mewoy += vy;
+
+  
+  //mewo
+   if (mewoy <= 0) { // top
+    vy = vy * -0.95; //positive * negative = negative
+   // mewoy = mewow/2 + mewoh/2; // when the ball is outside the walls this ensures bally is set back to within the walls,
+  }
+
+  if (mewoy >= height - 25) { //bottom
+    vy = vy * -0.95; //reverse the vy. Negative * negative = positive
+    mewoy = height - 25;
+  }
+  if (mewox <= 0) {// right
+    vx = vx * -0.95;
+
+  }
+
+  if (mewox >= width - 25) { //left
+    vx = vx * -0.95; //reverse the vx
+    mewox = width - 25;
+  }
+  
+ 
+  
+    // collision
+  if (dist(player1x, player1y, mewox, mewoy) <= player1d/2 + 25) {
+    //basically finding the slope
+    point = point - 2;
+  }
+
+  if (dist(player2x, player2y, mewox, mewoy) <= player2d/2 + 25) {
+
+    point2 = point2 - 2;
+  
+    //// fail.play();
+  }
+  
+  
+  
+
+  //// collision
+  //if (dist(player1x, player1y, ballx, bally) <= player1d/2 + balld/2) {
+  //  //basically finding the slope
+  //  point = point - 2;
+  //  vx = (ballx - player1x)/5;
+  //  vy = (bally - player1y)/5;
+  //}
+
+  //if (dist(player2x, player2y, ballx, bally) <= player2d/2 + balld/2) {
+
+  //  point2 = point2 - 2;
+  //  vx = (ballx - player2x)/5;
+  //  vy = (bally - player2y)/5;
+  //  // fail.play();
+  //}
+
+
+  //apple
+  // collision
+  if (dist(player1x, player1y, applex, appley) <= player1d/2 + 25) {
+
+    applex = random(25, 575);
+    appley = random(25, 575);
+    point = point + 1;
+  }
+
+  if (dist(player2x, player2y, applex, appley) <= player2d/2 + 25) {
+
+    applex = random(25, 575);
+    appley = random(25, 575);
+    point2 = point2 + 1;
+  }
+  }
