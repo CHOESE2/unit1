@@ -1,23 +1,246 @@
-//global variables // able to use it anywhere -> color = #FFFFFF
-//paremeter variables // can only use it within a function -> void grapes (int x, int y);
+//advanced drawing
 
+
+// remy
 
 void setup() {
-  strokeWeight(3);
+   
   size(800, 800);
-  frameRate(10);
+  background(0);
+ 
+  fill(100, 170, 206, 200);
+  circle(400, 1000, 1050);
+  
+  
+  strokeWeight(2);
+  stroke(0);
+  fill(255);
+ // fill(170, 206, 255);
+  circle(400, 1000, 1000); 
+  // plant rat
+   
+ 
+   int x,y;
+  x = -110;
+   y = 50;
+   while(x < 800){
+    x = x + 130;
+    pizza(x, y, random(0.2, 1));
+   }
+   
+   
+  int t;
+  t = 50;
+  while(t < 200){
+  t = t + 70;
+   grapeSoda(t, 600, 0.4);
+   
+   int w;
+   w = -20;
+   while(w < 700){
+     w = w + 80;
+     grapeSoda(w , 700, 0.4);
+   
+     
+      remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+       remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+        remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+       remy(random(-60, 685), random(700, 800), random(0, 0.5)); //lower
+     
+       
+         remy(random(200, 400), random(465, 700), random(0, 0.5)); // middle
+        
+      
+        remy(random(50, 200), random(500, 700), random(0, 0.5)); //side
+     remy(random(400, 550), random(500, 700), random(0, 0.5)); // side
+     
+     
+
+           
+       
+   //remy(random(0, 750), random(450, 800), random(0, 0.8));
+   // remy(random(-60, 800), random(450, 800), random(0, 0.5));
+   //  remy(random(-60, 800), random(450, 800), random(0, 0.5));
+    
+    
+   }
+    pizza(450, 450, 0.5);
+    
+    
+
+   }
+   }
+  
+
+
+
+
+
+void draw() {  
+  
+ 
+   
 }
 
 
-void draw() {
-  background(255);
-  grapeSoda(random(100, 700), random(100, 700), random(0.25, 1));
+
+void remy(float x, float y, float s) {
+  pushMatrix();
+  translate(x, y);
+  scale(s);
+  leftER();
+  head();
+  rightEP();
+  neck();
+  fangs();
+  snout();
+  rightE();
+  leftE();
+  shins();
+  feet();
+  thighL();
+  thighR();
+  armL();
+  body();
+  armR();
+  tail1();
+  tail2();
+  whisker1();
+  whisker2();
+  mushroom(70, -118);
+  //dots(0, -20, 8);
+
+  popMatrix();
 }
 
+
+//////
+void leftER() {
+  fill(131, 131, 131);
+  ellipse(256, 95, 26, 25);
+}
+void head() {
+  fill(131, 131, 131);
+  ellipse(277, 118, 50, 50);
+}
+void rightEP() {
+  fill(131, 131, 131);
+  ellipse(300, 96, 26, 25);
+  fill(255, 191, 192);
+  ellipse(300, 100, 16, 16);
+}
+void neck() {
+  fill(131, 131, 131);
+  rect(274, 140, 6, 15);
+}
+void snout() {
+  fill(131, 131, 131);
+  triangle(269, 112, 234, 135, 277, 132);
+}
+void fangs() {
+  fill(255);
+  triangle(245, 130, 255, 130, 250, 150);
+  triangle(260, 130, 270, 130, 265, 150);
+}
+
+
+void rightE() {
+  //right eye
+  fill(255);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(290, 120, 10, 10); // right eye
+  fill(255, 0, 0);
+  ellipse(290, 120, 5, 5);
+}
+void leftE() {
+  fill(255);
+  stroke(0);
+  strokeWeight(2);
+  ellipse(252, 119, 15, 15); // left eye
+  fill(255, 0, 0);
+  ellipse(252, 119, 6, 6);
+}
+void shins() {
+  fill(131, 131, 131);
+  rect(260, 220, 6, 25);
+  rect(288, 220, 6, 25);
+}
+void feet() {
+  fill(124, 0, 0);
+  rect(250, 240, 15, 8);
+  fill(131, 131, 131);
+  rect(279, 240, 15, 8);
+}
+void thighL() {
+  fill(131, 131, 131);
+  ellipse(263, 215, 20, 35);
+}
+void thighR() {
+  fill(124, 0, 0);
+  ;
+  ellipse(291, 215, 20, 35);
+}
+void body() {
+  int q, w;
+  q = 60;
+  w = 72;
+  while (w + q >= 0) {
+    q = q - 10;
+    w = w -10;
+    fill(255, random(0, 255), random(0, 255));
+    ellipse(277, 184, q, w );
+  }
+}
+void armL() {
+  fill(124, 0, 0);
+  rect(230, 178, 29, 8); //left arm
+  rect(230, 178, 7, 17); //fingers
+}
+void armR() {
+  rect(270, 178, 6, 17); //fingers
+  fill(124, 0, 0);
+  ellipse(295, 170, 15, 33); // right shoulder
+  rect(272, 178, 29, 8); //right arm
+  fill(0, 255, 0);
+  rect(278, 178, 10, 7); //lines on arm
+}
+
+void tail1() {
+  fill(131, 131, 131);
+  rect(300, 210, 20, 4);
+}
+void tail2() {
+  fill(131, 131, 131);
+  rect(320, random(200, 220), 20, 4);
+}
+void whisker1() {
+  fill(131, 131, 131);
+  line( 290, 130, 310, 126);
+}
+void whisker2() {
+  fill(131, 131, 131);
+  line(289, 135, 308, 145);
+}
+
+void mushroom(int x, int y) {
+  pushMatrix();
+  translate (x, y);
+
+  fill(0);
+  rect(200, 200, 5, 15); //mushroom
+  fill(255);
+  rect(196, 200, 13, 8);//CAP
+  fill(255, 0, 0);
+  circle(206, 200, 5);
+  circle(199, 206, 5);
+  popMatrix();
+}
+
+// grape
 void grapeSoda(float x, float y, float s) {
   pushMatrix();
   translate(x, y);
-  //rotate(PI/ 2);
   scale(s);
   box();
   juice();
@@ -28,6 +251,9 @@ void grapeSoda(float x, float y, float s) {
   popMatrix();
 }
 
+
+
+/////
 void box() {
   //bottle cap
   stroke(32, 0, 49);
@@ -38,11 +264,21 @@ void box() {
   stroke(32, 0, 49);
   fill(255);
   rect(0, 0, 130, 200);
+
+  int x, y;
+  x = 0;
+  y = 0;
+  while (x < 130) {
+    x = x + 11;
+    strokeWeight(2);
+    stroke(0);
+    line(x, y, x, 200);
+  }
 }
 
 void juice() {
   //second layer
-  fill(32, 0, 49);
+  fill(random(0, 255), random(0, 255), random(0, 255));
   rect(7, 15, 115, 172);
 }
 
@@ -64,11 +300,13 @@ void texts() {
   textSize(30);
   strokeWeight(3);
   text("juice", 46, 90);
+  // if (textSize = 3){
+  //   text("mystery drink", 46, 90);
 }
 
 void grape() {
   //1
-  stroke(216, 203, 255);
+  stroke(32, 0, 49);
   fill(164, 105, 193);
   circle(65, 174, 20);
   // third row
@@ -94,4 +332,73 @@ void grape() {
   rect(99, 119, 5, 13);
   rect(93, 115, 23, 5);
   //grape soda 280, 280);
+}
+
+
+
+
+void pizza(float x, float y, float s) {
+  pushMatrix();
+  translate(x, y);
+  scale(s);
+  rotate(random(PI/2));
+bread(0, 0);
+
+  toppings();
+  seasoning();
+  popMatrix();
+}
+
+void bread(int x, int y) {
+  // BODY
+  pushMatrix();
+  translate(x, y);
+   fill(random(0, 255), random(0, 255), random(0, 255));
+  triangle(196, 100, 256, 100, 226, 200);
+  
+  
+  
+  fill(   255, 206, 80 );
+  triangle(200, 100, 260, 100, 230, 200);
+   fill(random(0, 255), random(0, 255), random(0, 255));
+  rect(184, 86, 80, 12);
+  fill(255);
+  rect(188, 87, 80, 12);
+    int p;
+  p = 188;
+  while(p < 264){
+    p = p + 10;
+    line(p, 87, p, 99);
+  }
+ 
+popMatrix();
+}
+
+
+
+void toppings(){
+// pepperoni
+int d;
+d = 18;
+while(d > 0){
+  d = d - 5;
+  //stroke(random(0, 255), random(0, 255), random(0, 255));
+ 
+  fill(random(0, 255), random(0, 255), random(0, 255));
+  circle(218, 116, d);
+  circle(230, 150, d);
+}
+  
+  // mushroom
+   fill(0);
+  rect(242, 111, 4, 13); //mushroom
+  fill(255);
+  rect(235, 111, 13, 5);//CAP
+}
+
+void seasoning(){
+   rect(220, 129, 3, 10);
+  rect(231, 122, 3, 10);
+  rect(238, 135, 3, 10);
+  rect(230, 170, 3, 10);
 }
